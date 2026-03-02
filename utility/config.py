@@ -5,7 +5,7 @@
 import tomllib
 from .log import Rlogger
 
-CONFIG_PATH = r"x:\share\ksp\config.toml"
+CONFIG_PATH = r"/var/Xs/server/RSP/config.toml"
 
 
 def Tomlconfig():

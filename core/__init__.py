@@ -1,3 +1,3 @@
-from .Kernel import Kernel
+from .kernel import Kernel
 
 __all__ = ["Kernel"]

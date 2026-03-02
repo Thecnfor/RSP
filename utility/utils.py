@@ -54,12 +54,13 @@ class Utils:
         """
         异步监测系统：采用“检测-确认-反馈”闭环逻辑
         """
-        # 根据用户定义：isFActive 为 True 表示已抛离或无需处理
-        if self.isFActive:
+        # 如果 isFActive 为 False (即已抛离或不存在)，则无需操作
+        if not self.isFActive:
             return
 
         Rlogger("Utils").info("整流罩智能监测系统已上线...")
-        while not self.isFActive:
+        # 当 isFActive 为 True (即存在且未抛离) 时循环监测
+        while self.isFActive:
 
             flight = self.vessel.flight()
             # 抛离条件：海拔 > 40,000m 且动压 < 100 Pa
